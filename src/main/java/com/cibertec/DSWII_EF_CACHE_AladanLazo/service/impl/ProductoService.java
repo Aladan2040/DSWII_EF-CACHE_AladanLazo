@@ -16,9 +16,9 @@ public class ProductoService implements IProductoService {
 
     private final ProductoRepository productoRepository;
 
-    @Cacheable(value="productoTipo" ,key= "#nombre")
+    @Cacheable(value="productoTipo" ,key= "#tipo")
     @Override
     public List<Producto> obtenerProductosporTipo(String tipo) {
-        return List.of();
+        return productoRepository.obtenerProductosPorTipo(tipo);
     }
 }
